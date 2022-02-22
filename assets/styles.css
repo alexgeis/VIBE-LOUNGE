@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  background-color: yellow;
+}
+.logo {
+  max-width: 150px;
+  max-height: 150px;
+}
+.vibe-box {
+    background-color: blue;
+}
+.card-box {
+    background-color: grey;
+    justify-content: space-around;
+}
