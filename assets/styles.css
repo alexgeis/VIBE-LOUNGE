@@ -1,15 +1,38 @@
 header {
   display: flex;
   background-color: yellow;
+  justify-content: flex-end;
+}
+h5 {
+  color: white;
+}
+p {
+  color: white;
 }
 .logo {
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 400px;
+  max-height: 300px;
 }
 .vibe-box {
-    background-color: blue;
+  background-color: blue;
 }
 .card-box {
-    background-color: grey;
-    justify-content: space-around;
+  background-color: grey;
+  justify-content: space-around;
+}
+.card-body {
+  background-position: center;
+  background-size: cover;
+}
+.card1 {
+  background-image: url(https://via.placeholder.com/150C/O);
+}
+.card2 {
+  background-image: url(https://via.placeholder.com/150C/O);
+}
+.card3 {
+  background-image: url(https://via.placeholder.com/150C/O);
+}
+.card4 {
+  background-image: url(https://via.placeholder.com/150C/O);
 }
