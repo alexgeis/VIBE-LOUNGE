@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="435.98111"
+   height="167.05508"
+   viewBox="0 0 435.98111 167.05508"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
+   sodipodi:docname="vibeLoungeLogo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="2"
+     inkscape:cx="211.25"
+     inkscape:cy="102.75"
+     inkscape:window-width="1655"
+     inkscape:window-height="1040"
+     inkscape:window-x="2080"
+     inkscape:window-y="12"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="122"
+       y="48"
+       width="439"
+       height="102"
+       id="rect27483" />
+    <rect
+       x="107.35117"
+       y="48.587074"
+       width="177.93375"
+       height="88.966873"
+       id="rect18855" />
+    <rect
+       x="107.35117"
+       y="62.70359"
+       width="161.84749"
+       height="63.688461"
+       id="rect9309" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-8.1723501,-7.8910946)">
+    <path
+       id="rect3714"
+       style="fill:#000000;stroke-width:0.88"
+       d="M 85.470352,7.8910946 29.374727,101.00315 29.783288,42.553479 10.17235,31.230354 v 85.578286 l 6.094688,3.52 -5.542969,9.60093 0.142889,45.01661 87.820223,-151.046295 z"
+       sodipodi:nodetypes="cccccccccc" />
+    <path
+       id="rect3714-9"
+       style="fill:#000000;stroke-width:0.88"
+       d="m 82.823132,63.472073 -47.332656,81.650937 4.630312,8.05234 -7.333906,0.0121 -13.40707,22.11438 131.679828,-0.0918 16.14377,-22.23403 -113.700469,0.17874 40.607187,-70.051088 z"
+       sodipodi:nodetypes="cccccccccc" />
+    <text
+       xml:space="preserve"
+       id="text9307"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect9309);fill:#000000;fill-opacity:1;stroke:none"><tspan
+         x="107.35156"
+         y="162.88579"
+         id="tspan52456"><tspan
+           dx="0 27.34375 16.835938 27.421875 25.292969 21.875 31.484375 29.277344 29.921875 31.015625"
+           id="tspan52454">VIBELOUNGE</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       id="text18853"
+       style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18855);fill:#000000;fill-opacity:1;stroke:none" />
+    <text
+       xml:space="preserve"
+       id="text27481"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:69.3333px;line-height:1.25;font-family:'Tw Cen MT Condensed';-inkscape-font-specification:'Tw Cen MT Condensed, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect27483);fill:#000000;fill-opacity:1;stroke:none"
+       transform="translate(-4,4)"><tspan
+         x="122"
+         y="110.68684"
+         id="tspan52458">VIBE LOUNGE</tspan></text>
+  </g>
+</svg>
