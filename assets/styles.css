@@ -9,6 +9,9 @@ h5 {
 p {
   color: white;
 }
+.active {
+  display: flex;
+}
 .logo {
   max-width: 400px;
   max-height: 300px;
