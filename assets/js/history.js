@@ -11,6 +11,12 @@ var fiveDaysAgo = moment().subtract(5, "days").format("L");
 var sixDaysAgo = moment().subtract(6, "days").format("L");
 var sevenDaysAgo = moment().subtract(7, "days").format("L");
 
+var dayCount = 0;
+/*
+
+*/
+// var moodOneDay = moodZeroDay
+
 var moodZeroDay = localStorage.getItem("moodZeroDay");
 var moodOneDay = localStorage.getItem("moodOneDay");
 var moodTwoDay = localStorage.getItem("moodTwoDay");
@@ -20,13 +26,40 @@ var moodFiveDay = localStorage.getItem("moodFiveDay");
 var moodSixDay = localStorage.getItem("moodSixDay");
 var moodSevenDay = localStorage.getItem("moodSevenDay");
 
-var savedMoods = JSON.parse(localStorage.getItem("KEY")) || [];
+// var savedMoods = JSON.parse(localStorage.getItem("KEY")) || [];
+var savedMoods = [
+  moodZeroDay,
+  moodOneDay,
+  moodTwoDay,
+  moodThreeDay,
+  moodFourDay,
+  moodFiveDay,
+  moodSixDay,
+  moodSevenDay,
+];
+// var savedMoods = [
+//   moodZeroDay,
+//   moodOneDay,
+//   moodTwoDay,
+//   moodThreeDay,
+//   moodFourDay,
+//   moodFiveDay,
+//   moodSixDay,
+//   moodSevenDay,
+// ];
+/*
+for (i=0; i < savedMoods.length;i++){
+    data.push()
+}
+*/
+
 //kitten game help
 // var userInits = window.prompt("What are you Initials?");
 // // TODO: SAVE USER/SCORE TO LOCALSTORAGE
 // var userObj = {
 //   KEY 1,
 //   KEY 2,
+//   Key 3...
 // };
 // // UPDATE SAVED SCORE DATA (ARRAY)
 // savedScores.push(userObj);
@@ -54,6 +87,7 @@ function renderChart() {
         backgroundColor: "rgb(255, 99, 132)",
         borderColor: "rgb(255, 99, 132)",
         //USER MOOD INPUT VALUE WILL FILL THIS DATA ROW
+        // data: savedMoods,
         data: [0, 100, -100, 0, 0, 100, 100, -100, -100, 0, 0, -100, -100, 0],
       },
     ],
@@ -122,10 +156,13 @@ VIBEBUTTON1.addEventListener("click", function(e){
     e.preventDefault();
     if (e.id === "upMood"){
     var moodInput = 100
+    localStorage.setItem("moodZeroDay", moodInput)
     } else if (e.id === "downMood"){
     var moodInput = -100
+    localStorage.setItem("moodZeroDay", moodInput)
     } else {
     var moodInput = 0
+    localStorage.setItem("moodZeroDay", moodInput)
     }
     return moodInput;
 }
