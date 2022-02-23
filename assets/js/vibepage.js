@@ -7,7 +7,7 @@ var picture = [
 ];
 //sets the time interval for how often pictures change in the carousel
 function setTime() {
-  var secondsLeft = 5;
+  var secondsLeft = 10;
   var timeInterval = setInterval(function () {
     secondsLeft--;
     if (secondsLeft <= 0) {
@@ -33,3 +33,12 @@ function callImage() {
   return setTime();
 }
 callImage();
+
+
+
+//Mike's fetch code    
+fetch("https://api.pexels.com/v1/search?query=relax")
+	.then(res => res.json())
+	.then(result => {
+		console.log(result);})
+//End of Mike's code
