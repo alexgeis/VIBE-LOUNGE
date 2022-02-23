@@ -47,3 +47,9 @@ p {
 .feelings {
   background-color: rgb(41, 92, 143);
 }
+#pexelsTag {
+  max-height: 50px;
+}
+#vibePageMain {
+  background-color: rgb(38, 39, 41);
+}
