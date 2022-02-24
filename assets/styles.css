@@ -1,49 +1,73 @@
+:root {
+  background-color: #184e77;
+}
 header {
+  background-color: #184e77;
   display: flex;
-  background-color: yellow;
-  justify-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 2%;
+  padding-bottom: 1rem;
+}
+h2 {
+  font-family: "Shizuru", cursive;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
 }
 h5 {
   color: white;
 }
 p {
+  font-family: "Marck Script", cursive;
   color: white;
+}
+a p {
+  opacity: 50%;
+}
+a p:hover {
+  color: black;
+  background-color: white;
 }
 .active {
   display: flex;
 }
-
+.btn {
+  margin-top: 2rem;
+  max-height: 18rem;
+  max-width: 18rem;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  font-size: 1.5rem;
+  border: solid 5px #99d98c;
+}
+.card {
+  margin-top: 2rem;
+}
 .card-box {
-  background-color: grey;
   justify-content: space-around;
 }
 .card-body {
   background-position: center;
   background-size: cover;
 }
-.card1 {
-  background-image: url(https://images.unsplash.com/photo-1645611868479-c5aa51b8e77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
-}
-.card2 {
-  background-image: url(https://images.unsplash.com/photo-1640216687044-0391b9824866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=758&q=80);
-}
-.card3 {
-  background-image: url(https://images.unsplash.com/photo-1645536642772-93d4df8b8172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
-}
-.card4 {
-  /* background-image: url(https://images.unsplash.com/photo-1644392047970-bb04b74f2af9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80); */
-  display:flex
-}
+
 .calendar-box {
-  background-color: yellow;
+  background-color: #184e77;
   height: 300px;
   max-width: 100%;
 }
 .feelings {
-  background-color: rgb(41, 92, 143);
+  background-color: #1a759f;
+  padding: 2rem, 2rem;
+  padding-bottom: 5%;
 }
 .logo {
-  max-width: 400px;
+  max-width: 700px;
+  max-height: 500px;
+}
+.logoVP {
+  max-width: 500px;
   max-height: 300px;
 }
 .top-right {
@@ -51,10 +75,25 @@ p {
   top: 8px;
   right: 16px;
   font-size: 6rem;
-  color: blueviolet;
+  color: #76c893;
+}
+.author {
+  font-size: 4rem;
+  color: #99d98c;
 }
 .vibe-box {
-  background-color: blue;
+}
+#card1box {
+  background-image: url(https://images.unsplash.com/photo-1645611868479-c5aa51b8e77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+}
+#card2box {
+  background-image: url(https://images.unsplash.com/photo-1640216687044-0391b9824866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=758&q=80);
+}
+#card3box {
+  background-image: url(https://images.unsplash.com/photo-1645536642772-93d4df8b8172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
+}
+#card4box {
+  background-image: url(https://images.unsplash.com/photo-1644392047970-bb04b74f2af9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
 }
 #pexelsTag {
   max-height: 50px;
