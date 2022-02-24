@@ -20,10 +20,14 @@ function setTime() {
 }
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
-  fetch("https://api.pexels.com/v1/search?query=relax")
+  fetch("https://api.pexels.com/v1/search?query=relax", {
+    headers: {
+      Authorization: '563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665'
+   }})
     .then((res) => res.json())
     .then((result) => {
-      // console.log(result);
+      console.log(result);
+    
       var picture = result.photos[pictureIndex].src.landscape;
       var imgEl = document.createElement("img");
       imgEl.setAttribute("src", picture);
@@ -47,12 +51,3 @@ function callImage() {
 
 callImage();
 
-//Mike's fetch code
-// fetch("https://api.pexels.com/v1/search?query=relax")
-//   .then((res) => res.json())
-//   .then((result) => {
-//     console.log(result);
-//     console.log(result.photos[pictureIndex].url)
-
-//   });
-//End of Mike's code
