@@ -1,7 +1,7 @@
 header {
   display: flex;
   background-color: yellow;
-  justify-content: flex-end;
+  justify-items: flex-end;
 }
 h5 {
   color: white;
@@ -46,6 +46,13 @@ p {
 }
 .feelings {
   background-color: rgb(41, 92, 143);
+}
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 6rem;
+  color: blueviolet;
 }
 #pexelsTag {
   max-height: 50px;
