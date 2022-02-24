@@ -37,14 +37,7 @@ console.log(event.target)
 
 //create an event listener on the chill button. 
 
-    chillBtn.addEventListener("click", getData
-  )
-
-  stokedBtn.addEventListener("click", getData
-  )
-
-  stressedBtn.addEventListener("click", getData
-  )
-  
-  heavyBtn.addEventListener("click", getData
-  )
+chillBtn.addEventListener("click", getData)
+stokedBtn.addEventListener("click", getData)
+stressedBtn.addEventListener("click", getData)
+heavyBtn.addEventListener("click", getData)

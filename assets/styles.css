@@ -1,7 +1,7 @@
 header {
   display: flex;
   background-color: yellow;
-  justify-content: flex-end;
+  justify-items: flex-end;
 }
 h5 {
   color: white;
@@ -12,13 +12,7 @@ p {
 .active {
   display: flex;
 }
-.logo {
-  max-width: 400px;
-  max-height: 300px;
-}
-.vibe-box {
-  background-color: blue;
-}
+
 .card-box {
   background-color: grey;
   justify-content: space-around;
@@ -28,16 +22,17 @@ p {
   background-size: cover;
 }
 .card1 {
-  background-image: url(https://via.placeholder.com/150C/O);
+  background-image: url(https://images.unsplash.com/photo-1645611868479-c5aa51b8e77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }
 .card2 {
-  background-image: url(https://via.placeholder.com/150C/O);
+  background-image: url(https://images.unsplash.com/photo-1640216687044-0391b9824866?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=758&q=80);
 }
 .card3 {
-  background-image: url(https://via.placeholder.com/150C/O);
+  background-image: url(https://images.unsplash.com/photo-1645536642772-93d4df8b8172?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
 }
 .card4 {
-  background-image: url(https://via.placeholder.com/150C/O);
+  /* background-image: url(https://images.unsplash.com/photo-1644392047970-bb04b74f2af9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80); */
+  display:flex
 }
 .calendar-box {
   background-color: yellow;
@@ -46,6 +41,20 @@ p {
 }
 .feelings {
   background-color: rgb(41, 92, 143);
+}
+.logo {
+  max-width: 400px;
+  max-height: 300px;
+}
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 6rem;
+  color: blueviolet;
+}
+.vibe-box {
+  background-color: blue;
 }
 #pexelsTag {
   max-height: 50px;
