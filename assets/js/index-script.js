@@ -5,7 +5,6 @@ var stressedBtn = document.querySelector(".btn-stressed");
 var heavyBtn = document.querySelector(".btn-heavy");
 
 //local storage arrays
-//quotes
 var storedQuotes = JSON.parse(localStorage.getItem("storedQuotes")) || [];
 
 //create a function
