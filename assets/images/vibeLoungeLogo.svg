@@ -2,13 +2,16 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="435.98111"
-   height="167.05508"
-   viewBox="0 0 435.98111 167.05508"
+   width="145"
+   height="160"
+   viewBox="0 0 145 160"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
    sodipodi:docname="vibeLoungeLogo.svg"
+   inkscape:export-filename="C:\Users\13098\Desktop\Vibe_Lounge\assets\images\VibeLoungeLogoBlack.png"
+   inkscape:export-xdpi="200"
+   inkscape:export-ydpi="200"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -23,15 +26,16 @@
      inkscape:pagecheckerboard="1"
      inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="2"
-     inkscape:cx="211.25"
-     inkscape:cy="102.75"
+     inkscape:zoom="4"
+     inkscape:cx="85"
+     inkscape:cy="82.125"
      inkscape:window-width="1655"
      inkscape:window-height="1040"
-     inkscape:window-x="2080"
-     inkscape:window-y="12"
+     inkscape:window-x="184"
+     inkscape:window-y="10"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     height="160.05508px" />
   <defs
      id="defs2">
     <rect
@@ -61,33 +65,31 @@
     <path
        id="rect3714"
        style="fill:#000000;stroke-width:0.88"
-       d="M 85.470352,7.8910946 29.374727,101.00315 29.783288,42.553479 10.17235,31.230354 v 85.578286 l 6.094688,3.52 -5.542969,9.60093 0.142889,45.01661 87.820223,-151.046295 z"
-       sodipodi:nodetypes="cccccccccc" />
+       d="M 77.915702,9.3056546 27.345063,93.634665 28.037315,43.18809 8.4903616,31.754863 8.0541097,109.33191 14.128907,112.88614 8.5320361,122.45575 8.4217781,167.47246 89.017024,29.877197 Z"
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-filename="C:\Users\13098\Desktop\Vibe_Lounge\assets\images\VibeLoungeLogoWhite.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <path
        id="rect3714-9"
        style="fill:#000000;stroke-width:0.88"
-       d="m 82.823132,63.472073 -47.332656,81.650937 4.630312,8.05234 -7.333906,0.0121 -13.40707,22.11438 131.679828,-0.0918 16.14377,-22.23403 -113.700469,0.17874 40.607187,-70.051088 z"
-       sodipodi:nodetypes="cccccccccc" />
+       d="m 93.158032,56.232658 -47.821291,81.365722 4.581964,8.07995 -7.33385,-0.032 -13.539401,22.03362 107.681446,0.0537 16.27676,-22.13686 -89.702921,0.14099 41.026401,-69.806392 z"
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-filename="C:\Users\13098\Desktop\Vibe_Lounge\assets\images\VibeLoungeLogoWhite.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
     <text
        xml:space="preserve"
        id="text9307"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect9309);fill:#000000;fill-opacity:1;stroke:none"><tspan
          x="107.35156"
          y="162.88579"
-         id="tspan52456"><tspan
+         id="tspan929"><tspan
            dx="0 27.34375 16.835938 27.421875 25.292969 21.875 31.484375 29.277344 29.921875 31.015625"
-           id="tspan52454">VIBELOUNGE</tspan></tspan></text>
+           id="tspan927">VIBELOUNGE</tspan></tspan></text>
     <text
        xml:space="preserve"
        id="text18853"
        style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect18855);fill:#000000;fill-opacity:1;stroke:none" />
-    <text
-       xml:space="preserve"
-       id="text27481"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:69.3333px;line-height:1.25;font-family:'Tw Cen MT Condensed';-inkscape-font-specification:'Tw Cen MT Condensed, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;white-space:pre;shape-inside:url(#rect27483);fill:#000000;fill-opacity:1;stroke:none"
-       transform="translate(-4,4)"><tspan
-         x="122"
-         y="110.68684"
-         id="tspan52458">VIBE LOUNGE</tspan></text>
   </g>
 </svg>
