@@ -24,7 +24,14 @@ console.log(event.target)
 
 
         }).then(function(data) {
-            console.log(data)
+           // console.log(data);
+           // console.log(data.quotes[0].body); 
+           // console.log(data.quotes[0].author); 
+            var quoteData = data.quotes[0].body;
+            var quoteAuthor = data.quotes[0].author;
+            console.log(quoteData);
+            console.log(quoteAuthor);
+
 
 
 
