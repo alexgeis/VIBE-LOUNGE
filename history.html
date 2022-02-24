@@ -20,21 +20,30 @@
     </style>
   </head>
   <body>
-    <div style="height: 60%; width: 80%">
-      <canvas id="myChart" aria-label="Mood History Chart"></canvas>
+    <div style="height: 60%; width: 90%; background-color: white">
+      <canvas id="myChart" aria-label="Recent Mood History Chart"></canvas>
     </div>
 
     <div>
-      <button id="buttonOne" data-mood="100"></button>
+      <button id="buttonOne" data-mood="100">Stoked = 100</button>
     </div>
     <div>
-      <button id="buttonTwo" data-mood="0"></button>
+      <button id="buttonTwo" data-mood="50">Chill = 50</button>
     </div>
     <div>
-      <button id="buttonThree" data-mood="-100"></button>
+      <button id="buttonZen" data-mood="50">Zen = 0</button>
+    </div>
+    <div>
+      <button id="buttonThree" data-mood="-50">Stressed = -50</button>
+    </div>
+    <div>
+      <button id="buttonFour" data-mood="-100">Heavy = -100</button>
     </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script> -->
+    <!-- MONTHLY CHART -->
+    <!-- <div style="height: 60%; width: 90%; background-color: white">
+      <canvas id="chartThirty" aria-label="Mood History Chart"></canvas>
+    </div> -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
       referrerpolicy="no-referrer"
