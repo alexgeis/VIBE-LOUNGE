@@ -52,7 +52,7 @@ a p:hover {
   background-size: cover;
 }
 
-.calendar-box {
+.chart-box {
   background-color: #184e77;
   height: 300px;
   max-width: 100%;
@@ -79,7 +79,7 @@ a p:hover {
   color: #76c893;
 }
 .author {
-  font-size: .8rem;
+  font-size: 0.8rem;
   color: #99d98c;
 }
 .vibe-box {

@@ -78,19 +78,19 @@
                 >
               </div>
             </div> -->
-                <a href="#" id="card1box" class="btn btn-chill delay" data-mood="chill">
+                <a href="#" id="card1box" class="btn btn-chill delay" data-mood="chill" data-chart="50">
                   <h5>Chill</h5>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab porro iusto, deserunt eos nesciunt veniam iure cupiditate sit?</p>
                   </a>
-                <a href="#" id="card2box" class="btn btn-stoked" data-mood="stoked">
+                <a href="#" id="card2box" class="btn btn-stoked" data-mood="stoked" data-chart="100">
                   <h5>Stoked</h5>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab porro iusto, deserunt eos nesciunt veniam iure cupiditate sit?</p>
                   </a>
-                <a href="#" id="card3box" class="btn btn-stressed" data-mood="stressed">
+                <a href="#" id="card3box" class="btn btn-stressed" data-mood="stressed" data-chart="-50">
                   <h5>Stressed</h5>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab porro iusto, deserunt eos nesciunt veniam iure cupiditate sit?</p>
                   </a>
-                <a href="#" id="card4box" class="btn btn-heavy" data-mood="heavy">
+                <a href="#" id="card4box" class="btn btn-heavy" data-mood="heavy" data-chart="-100">
                   <h5>Heavy</h5>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab porro iusto, deserunt eos nesciunt veniam iure cupiditate sit?</p>
                   </a>
@@ -99,12 +99,20 @@
           </div>
         </div>
       </section>
-      <section class="calendar-box">
-        <div>
-          <div class=""></div>
+      <section class="chart-box">
+        <div style="height: 60%; width: 100%; background-color: white">
+          <canvas id="myChart" aria-label="Recent Mood History Chart"></canvas>
         </div>
       </section>
-      <div><script src="./assets/js/index-script.js"></script></div>
     </main>
+
+    <!-- MOMENT JS SCRIPT -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- CHART JS SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./assets/js/index-script.js"></script>
   </body>
 </html>
