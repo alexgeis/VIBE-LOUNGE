@@ -1,7 +1,6 @@
 /* font-family: 'Lobster', cursive;
 font-family: 'Open Sans Condensed', sans-serif; */
 
-
 :root {
   background-color: #184e77;
 }
@@ -12,7 +11,7 @@ header {
   padding: 1rem;
 }
 h2 {
-  font-family: font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   color: white;
   text-align: center;
   font-size: 4rem;
@@ -21,7 +20,7 @@ h5 {
   color: white;
 }
 p {
-  font-family: font-family: 'Open Sans Condensed', sans-serif;
+  font-family: "Open Sans Condensed", sans-serif;
   color: white;
 }
 a p {
