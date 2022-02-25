@@ -1,5 +1,7 @@
 var imgCar = document.querySelector(".active");
 var quoteBox = document.querySelector(".top-right");
+var authorBox = document.querySelector(".author");
+
 var pictureIndex = 0;
 //sets the time interval for how often pictures change in the carousel
 function setTime() {
