@@ -3,32 +3,30 @@ var quoteBox = document.querySelector(".quote");
 var authorBox = document.querySelector(".author");
 var pictureIndex = 0;
 
-
-
 //sets the time interval for how often pictures change in the carousel
-function setTime() {
-  var secondsLeft = 10;
-  var timeInterval = setInterval(function () {
-    secondsLeft--;
-    if (secondsLeft <= 0) {
-      clearInterval(timeInterval);
-      var imgEl = document.getElementById("active-image");
-      imgEl.remove();
-      callImage();
-      pictureIndex++;
-      if (pictureIndex >= 15) {
-        pictureIndex = 0;
-      }
-    }
-  }, 1000);
-}
+// function setTime() {
+//   var secondsLeft = 10;
+//   var timeInterval = setInterval(function () {
+//     secondsLeft--;
+//     if (secondsLeft <= 0) {
+//       clearInterval(timeInterval);
+//       var imgEl = document.getElementById("active-image");
+//       imgEl.remove();
+//       callImage();
+//       pictureIndex++;
+//       if (pictureIndex >= 15) {
+//         pictureIndex = 0;
+//       }
+//     }
+//   }, 1000);
+// }
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
   fetch("https://api.pexels.com/v1/search?query=relax", {
-      headers: {
-        Authorization: '563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665'
-      }
-    })
+    headers: {
+      Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
+    },
+  })
     .then((res) => res.json())
     .then((result) => {
       console.log(result);
@@ -50,7 +48,7 @@ function callImage() {
         var imgEl = document.getElementById("active-image");
         //still having trouble with these 2 lines vvvvv
         imgEl.remove();
-        imageEl.src = picture;
+        imgEl.src = picture;
       }
 
       //Timer for changing images at an interval
@@ -59,7 +57,7 @@ function callImage() {
       }, 8000);
     });
 }
-callImages();
+callImage();
 
 // function callQuote() {
 //     fetch()
