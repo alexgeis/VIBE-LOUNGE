@@ -1,44 +1,44 @@
 var imgCar = document.querySelector(".active");
 var quoteBox = document.querySelector(".top-right");
-var pictureIndex = 0;
-//sets the time interval for how often pictures change in the carousel
-function setTime() {
-  var secondsLeft = 10;
-  var timeInterval = setInterval(function () {
-    secondsLeft--;
-    if (secondsLeft <= 0) {
-      clearInterval(timeInterval);
-      var imgEl = document.getElementById("active-image");
-      imgEl.remove();
-      callImage();
-      pictureIndex++;
-      if (pictureIndex >= 15) {
-        pictureIndex = 0;
-      }
-    }
-  }, 1000);
-}
-//creates and appends images into the carousel uses the picture from the fetch request's json object
-function callImage() {
-  fetch("https://api.pexels.com/v1/search?query=relax", {
+
+
+
+function callImages() {
+  //Fetches images from Pexels
+  fetch("https://api.pexels.com/v1/search?query=nightlife", {
       headers: {
         Authorization: '563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665'
       }
-    })
-    .then((res) => res.json())
-    .then((result) => {
-      console.log(result);
+  })
+  .then((res) => res.json())
+  .then((result) => {
+    console.log(result);
+    
+    //Dynamically creates image carousel  
+    var picIndex = 0;
+    var picture = result.photos[picIndex].src.landscape;
+    var imgEl = document.createElement("img");
+    imgEl.setAttribute("src", picture);
+    imgEl.setAttribute("id", "active-image");
+    imgEl.classList.add("d-block");
+    imgEl.classList.add("w-100");
+    imgCar.appendChild(imgEl);
 
-      var picture = result.photos[pictureIndex].src.landscape;
-      var imgEl = document.createElement("img");
-      imgEl.setAttribute("src", picture);
-      imgEl.setAttribute("id", "active-image");
-      imgEl.classList.add("d-block");
-      imgEl.classList.add("w-100");
-      imgCar.appendChild(imgEl);
-      return setTime();
-    });
+    //goes to next image in array  
+    function changeImage() {
+      picIndex++;
+      if (picIndex == result.photos.length) picIndex = 0;
+      var imgEl = document.getElementById("active-image");
+      //still having trouble with these 2 lines vvvvv
+      imgEl.remove()
+      imageEl.src=picture;
+    }
+    
+  //Timer for changing images at an interval
+  setInterval(function(){changeImage()}, 8000)});
 }
+callImages();
+
 
 // function callQuote() {
 //     fetch()
@@ -49,9 +49,6 @@ function callImage() {
 //     ])
 
 // }
-
-callImage();
-
 
 
 
