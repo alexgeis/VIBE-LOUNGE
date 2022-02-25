@@ -1,44 +1,45 @@
 var imgCar = document.querySelector(".active");
-var quoteBox = document.querySelector(".top-right");
-
+var quoteBox = document.querySelector(".quote");
 
 
 function callImages() {
   //Fetches images from Pexels
   fetch("https://api.pexels.com/v1/search?query=nightlife", {
-      headers: {
-        Authorization: '563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665'
-      }
+    headers: {
+      Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
+    },
   })
-  .then((res) => res.json())
-  .then((result) => {
-    console.log(result);
-    
-    //Dynamically creates image carousel  
-    var picIndex = 0;
-    var picture = result.photos[picIndex].src.landscape;
-    var imgEl = document.createElement("img");
-    imgEl.setAttribute("src", picture);
-    imgEl.setAttribute("id", "active-image");
-    imgEl.classList.add("d-block");
-    imgEl.classList.add("w-100");
-    imgCar.appendChild(imgEl);
+    .then((res) => res.json())
+    .then((result) => {
+      console.log(result);
 
-    //goes to next image in array  
-    function changeImage() {
-      picIndex++;
-      if (picIndex == result.photos.length) picIndex = 0;
-      var imgEl = document.getElementById("active-image");
-      //still having trouble with these 2 lines vvvvv
-      imgEl.remove()
-      imageEl.src=picture;
-    }
-    
-  //Timer for changing images at an interval
-  setInterval(function(){changeImage()}, 8000)});
+      //Dynamically creates image carousel
+      var picIndex = 0;
+      var picture = result.photos[picIndex].src.landscape;
+      var imgEl = document.createElement("img");
+      imgEl.setAttribute("src", picture);
+      imgEl.setAttribute("id", "active-image");
+      imgEl.classList.add("d-block");
+      imgEl.classList.add("w-100");
+      imgCar.appendChild(imgEl);
+
+      //goes to next image in array
+      function changeImage() {
+        picIndex++;
+        if (picIndex == result.photos.length) picIndex = 0;
+        var imgEl = document.getElementById("active-image");
+        //still having trouble with these 2 lines vvvvv
+        imgEl.remove();
+        imageEl.src = picture;
+      }
+
+      //Timer for changing images at an interval
+      setInterval(function () {
+        changeImage();
+      }, 8000);
+    });
 }
 callImages();
-
 
 // function callQuote() {
 //     fetch()
@@ -50,20 +51,16 @@ callImages();
 
 // }
 
-
-
 $(document).ready(function () {
-
   var key = [AIzaSyABQ8JoEM8APRG7n5Kp5Wjw7P8 - DKHMclU];
-  var playlistId = 'lexCOB9axWA&t=116s';
-  var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
-
+  var playlistId = "lexCOB9axWA&t=116s";
+  var URL = "https://www.googleapis.com/youtube/v3/playlistItems";
 
   var options = {
-    part: 'snippet',
+    part: "snippet",
     key: key,
     maxResults: 20,
-    playlistId: playlistId
+    playlistId: playlistId,
   };
 
   loadVids();
@@ -73,12 +70,12 @@ $(document).ready(function () {
       var id = data.items[0].snippet.resourceId.videoId;
       mainVid(id);
       resultsLoop(data);
-      console.log(data)
+      console.log(data);
     });
   }
 
   function mainVid(id) {
-    $('#video').html(`
+    $("#video").html(`
           << iframe id = "ytplayer"
           type = "text/html"
           width = "150"
@@ -89,18 +86,14 @@ $(document).ready(function () {
         `);
   }
 
-
   function resultsLoop(data) {
-
     $.each(data.items, function (i, item) {
-
       var thumb = item.snippet.thumbnails.medium.url;
       var title = item.snippet.title;
       var desc = item.snippet.description.substring(0, 100);
       var vid = item.snippet.resourceId.videoId;
 
-
-      $('main').append(`
+      $("main").append(`
               <article class="item" data-key="${vid}">
 
               <img src="${thumb}" alt="" class="thumb">
@@ -115,10 +108,8 @@ $(document).ready(function () {
   }
 
   // CLICK EVENT
-  $('main').on('click', 'article', function () {
-    var id = $(this).attr('data-key');
+  $("main").on("click", "article", function () {
+    var id = $(this).attr("data-key");
     mainVid(id);
   });
-
-
 });
