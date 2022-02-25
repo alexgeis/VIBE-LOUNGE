@@ -17,90 +17,90 @@ var storedQuotes = JSON.parse(localStorage.getItem("storedQuotes")) || [];
 //Below can be used to store monthly chart
 // var storedMonthlyMoods = JSON.parse(localStorage.getItem("monthlyMoods")) || [];
 
-// function latestChart() {
-//   const labels = [];
+function latestChart() {
+  const labels = [];
 
-//   const up = (ctx, value) =>
-//     ctx.p0.parsed.y < ctx.p1.parsed.y ? value : undefined;
-//   const down = (ctx, value) =>
-//     ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
+  const up = (ctx, value) =>
+    ctx.p0.parsed.y < ctx.p1.parsed.y ? value : undefined;
+  const down = (ctx, value) =>
+    ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
 
-//   const data = {
-//     labels: labels,
-//     datasets: [
-//       {
-//         label: "Your Mood - Last 7 Visits",
-//         //below 2 affect label color box at the top
-//         // backgroundColor: "rgb(255, 99, 132)",
-//         // borderColor: "rgb(24, 78, 119)",
-//         pointBackgroundColor: "rgb(255, 255, 255)",
-//         fill: true,
-//         tension: 0.2,
-//         segment: {
-//           borderColor: (ctx) =>
-//             up(ctx, "rgba(153, 217, 140, 1)") ||
-//             down(ctx, "rgba(24, 78, 119, 1)"),
-//           backgroundColor: (ctx) =>
-//             up(ctx, "rgba(153, 217, 140, 1)") ||
-//             down(ctx, "rgba(24, 78, 119, 1)"),
-//         },
-//         //USER MOOD INPUT VALUE WILL FILL THIS DATA ROW
-//         data: [],
-//         //   data: storedLatestMoods[0].moodInput,
-//       },
-//     ],
-//   };
-//   for (let i = 0; i < storedLatestMoods.length; i++) {
-//     const moodX = storedLatestMoods[i].moodInput;
-//     const timeY = storedLatestMoods[i].now;
-//     data.datasets[0].data.push(moodX);
-//     if (data.datasets[0].data.length == 8) {
-//       data.datasets[0].data.shift();
-//     }
-//     labels.push(timeY);
-//     if (labels.length == 8) {
-//       labels.shift();
-//     }
-//   }
-//   console.log(data.datasets[0].data);
-//   console.log(labels);
-//   console.log(storedLatestMoods);
-//   const config = {
-//     type: "line",
-//     data: data,
-//     options: {
-//       scales: {
-//         y: {
-//           //min-max of chart
-//           title: {
-//             display: true,
-//             //LABEL TEXT OF Y AXIS
-//             text: "Mood Level",
-//             //FONT OF LABEL
-//             // font: font-family,
-//           },
-//           min: -100,
-//           max: 100,
-//         },
-//         x: {
-//           title: {
-//             display: true,
-//             text: "Time of Visit",
-//           },
-//         },
-//       },
-//       ticks: {
-//         // forces step size to be 50 units
-//         stepSize: 50,
-//       },
-//     },
-//   };
-//   //   if (myChart instanceof Chart) {
-//   //     myChart.destroy();
-//   //   }
-//   const myChart = new Chart(document.getElementById("myChart"), config);
-// }
-// latestChart();
+  const data = {
+    labels: labels,
+    datasets: [
+      {
+        label: "Your Mood - Last 7 Visits",
+        //below 2 affect label color box at the top
+        // backgroundColor: "rgb(255, 99, 132)",
+        // borderColor: "rgb(24, 78, 119)",
+        pointBackgroundColor: "rgb(255, 255, 255)",
+        fill: true,
+        tension: 0.2,
+        segment: {
+          borderColor: (ctx) =>
+            up(ctx, "rgba(153, 217, 140, 1)") ||
+            down(ctx, "rgba(24, 78, 119, 1)"),
+          backgroundColor: (ctx) =>
+            up(ctx, "rgba(153, 217, 140, 1)") ||
+            down(ctx, "rgba(24, 78, 119, 1)"),
+        },
+        //USER MOOD INPUT VALUE WILL FILL THIS DATA ROW
+        data: [],
+        //   data: storedLatestMoods[0].moodInput,
+      },
+    ],
+  };
+  for (let i = 0; i < storedLatestMoods.length; i++) {
+    const moodX = storedLatestMoods[i].moodInput;
+    const timeY = storedLatestMoods[i].now;
+    data.datasets[0].data.push(moodX);
+    if (data.datasets[0].data.length == 8) {
+      data.datasets[0].data.shift();
+    }
+    labels.push(timeY);
+    if (labels.length == 8) {
+      labels.shift();
+    }
+  }
+  console.log(data.datasets[0].data);
+  console.log(labels);
+  console.log(storedLatestMoods);
+  const config = {
+    type: "line",
+    data: data,
+    options: {
+      scales: {
+        y: {
+          //min-max of chart
+          title: {
+            display: true,
+            //LABEL TEXT OF Y AXIS
+            text: "Mood Level",
+            //FONT OF LABEL
+            // font: font-family,
+          },
+          min: -100,
+          max: 100,
+        },
+        x: {
+          title: {
+            display: true,
+            text: "Time of Visit",
+          },
+        },
+      },
+      ticks: {
+        // forces step size to be 50 units
+        stepSize: 50,
+      },
+    },
+  };
+  //   if (myChart instanceof Chart) {
+  //     myChart.destroy();
+  //   }
+  const myChart = new Chart(document.getElementById("myChart"), config);
+}
+latestChart();
 
 //create a function
 
