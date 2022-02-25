@@ -1,15 +1,18 @@
+/* font-family: 'Lobster', cursive;
+font-family: 'Open Sans Condensed', sans-serif; */
+
+
 :root {
   background-color: #184e77;
 }
 header {
   background-color: #184e77;
   display: flex;
-  justify-content: flex-end;
-  padding-right: 2%;
-  padding-bottom: 1rem;
+  justify-content: left;
+  padding: 1rem;
 }
 h2 {
-  font-family: "Shizuru", cursive;
+  font-family: font-family: 'Open Sans Condensed', sans-serif;
   color: white;
   text-align: center;
   font-size: 4rem;
@@ -18,7 +21,7 @@ h5 {
   color: white;
 }
 p {
-  font-family: "Marck Script", cursive;
+  font-family: font-family: 'Open Sans Condensed', sans-serif;
   color: white;
 }
 a p {
@@ -30,13 +33,15 @@ a p {
 }
 .btn {
   margin-top: 2rem;
-  max-height: 18rem;
-  max-width: 18rem;
+  max-height: 15rem;
+  max-width: 15rem;
   background-size: cover;
   background-position: center;
   color: white;
-  font-size: 1.5rem;
-  border: solid 5px #99d98c;
+  text-shadow: 2px 2px 3px #333;
+  font-size: 3rem;
+  border: solid 5px #555;
+  border-radius: 1rem;
 }
 .card {
   margin-top: 2rem;
@@ -52,25 +57,18 @@ a p {
   background-position: center;
   background-size: cover;
 }
-
 .chart-box {
   background-color: #184e77;
   height: 300px;
   max-width: 100%;
 }
-
 .feelings {
   background-color: #1a759f;
   padding: 2rem, 2rem;
   padding-bottom: 5%;
 }
 .logo {
-  max-width: 700px;
-  max-height: 500px;
-}
-.logoVP {
-  max-width: 500px;
-  max-height: 300px;
+  height: 100px;
 }
 .top-right {
   position: absolute;
