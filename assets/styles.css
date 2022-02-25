@@ -24,10 +24,7 @@ p {
 a p {
   opacity: 50%;
 }
-a p:hover {
-  color: black;
-  background-color: white;
-}
+
 .active {
   display: flex;
 }
@@ -43,6 +40,10 @@ a p:hover {
 }
 .card {
   margin-top: 2rem;
+}
+.card-btn {
+  width: 18rem;
+  height: 18rem;
 }
 .card-box {
   justify-content: space-around;
@@ -78,6 +79,7 @@ a p:hover {
   font-size: 1rem;
   color: #76c893;
 }
+
 .author {
   font-size: 0.8rem;
   color: #99d98c;
@@ -96,6 +98,9 @@ a p:hover {
 }
 #card4box {
   background-image: url(https://images.unsplash.com/photo-1644392047970-bb04b74f2af9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+#card5box {
+  background-image: url(https://images.unsplash.com/photo-1532009877282-3340270e0529?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8emVufGVufDB8fDB8fA%3D%3D&w=1000&q=80);
 }
 #pexelsTag {
   max-height: 50px;
