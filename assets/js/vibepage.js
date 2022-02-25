@@ -1,11 +1,5 @@
 var imgCar = document.querySelector(".active");
-var quoteBox = document.querySelector(".top-right");
 
-
-
-function callImages() {
-  //Fetches images from Pexels
-  fetch("https://api.pexels.com/v1/search?query=nightlife", {
       headers: {
         Authorization: '563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665'
       }
