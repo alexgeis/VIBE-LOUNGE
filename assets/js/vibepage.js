@@ -3,31 +3,13 @@ var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector(".quote");
 var authorBox = document.querySelector(".author");
 
-
-//sets the time interval for how often pictures change in the carousel
-// function setTime() {
-//   var secondsLeft = 10;
-//   var timeInterval = setInterval(function () {
-//     secondsLeft--;
-//     if (secondsLeft <= 0) {
-//       clearInterval(timeInterval);
-//       var imgEl = document.getElementById("active-image");
-//       imgEl.remove();
-//       callImage();
-//       pictureIndex++;
-//       if (pictureIndex >= 15) {
-//         pictureIndex = 0;
-//       }
-//     }
-//   }, 1000);
-// }
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
   fetch("https://api.pexels.com/v1/search?query=relax", {
-    headers: {
-      Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
-    },
-  })
+      headers: {
+        Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
+      },
+    })
     .then((res) => res.json())
     .then((result) => {
       console.log(result);
@@ -57,7 +39,6 @@ function callImage() {
       //goes to next image in array
       function changeImage() {
         picIndex++;
-
       }
 
       //Timer for changing images at an interval
@@ -68,75 +49,61 @@ function callImage() {
 }
 callImage();
 
-// function callQuote() {
-//     fetch()
-//     .then((res) => res.jason())
-//     .then((results) => [
-//         var quote = result...
+playlistSearch("chill")
 
-//     ])
+function playlistSearch(searchList) {
+  fetch(
+      "https://www.googleapis.com/youtube/v3/search?q=" + searchList + "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU", {
+        method: "GET",
+      }
+    )
+    .then((res) => {
 
-// }
+      return res.json();
+    })
+    .then((data) => {
+      var index1 = Math.floor(Math.random() * 5)
+      var randomPlaylist = data.items[index1]
+      var playlistId = randomPlaylist.id.playlis
 
-// $(document).ready(function () {
-//   var key = [AIzaSyABQ8JoEM8APRG7n5Kp5Wjw7P8 - DKHMclU];
-//   var playlistId = "lexCOB9axWA&t=116s";
-//   var URL = "https://www.googleapis.com/youtube/v3/playlistItems";
+      playlistData(playlistId)
 
-//   var options = {
-//     part: "snippet",
-//     key: key,
-//     maxResults: 20,
-//     playlistId: playlistId,
-//   };
 
-//   loadVids();
 
-//   function loadVids() {
-//     $.getJSON(URL, options, function (data) {
-//       var id = data.items[0].snippet.resourceId.videoId;
-//       mainVid(id);
-//       resultsLoop(data);
-//       console.log(data);
-//     });
-//   }
 
-//   function mainVid(id) {
-//     $("#video").html(`
-//           << iframe id = "ytplayer"
-//           type = "text/html"
-//           width = "150"
-//           height = "84.375"
-//           src = "https://www.youtube.com/embed/lexCOB9axWA?playlist=&version=3&autoplay=1&color=white"
-//           frameborder = "0"
-//           allowfullscreen >>
-//         `);
-//   }
 
-//   function resultsLoop(data) {
-//     $.each(data.items, function (i, item) {
-//       var thumb = item.snippet.thumbnails.medium.url;
-//       var title = item.snippet.title;
-//       var desc = item.snippet.description.substring(0, 100);
-//       var vid = item.snippet.resourceId.videoId;
 
-//       $("main").append(`
-//               <article class="item" data-key="${vid}">
 
-//               <img src="${thumb}" alt="" class="thumb">
-//                 <div class="details">
-//                   <h4>${title}</h4>
-//                   <p>${desc}</p>
-//                 </div>
 
-//               </article>
-//             `);
-//     });
-//   }
 
-//   // CLICK EVENT
-//   $("main").on("click", "article", function () {
-//     var id = $(this).attr("data-key");
-//     mainVid(id);
-//   });
-// });
+    })
+
+    .catch((err) => console.error(err));
+
+
+}
+
+function playlistData(playlistId) {
+  fetch(
+      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU&id=" + playlistId + "&part=player", {
+        method: "GET",
+      }
+    )
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
+    .then((data) => console.log(data))
+
+
+
+
+
+
+
+    .catch((err) => console.error(err));
+
+
+
+
+}
