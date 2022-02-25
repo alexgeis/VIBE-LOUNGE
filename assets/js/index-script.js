@@ -115,38 +115,6 @@ latestChart();
 //capture mood input and store locally
 function getData(event) {
   console.log(event.target);
-
-  // Return an inspirational quote from the API and log it to the console.
-  fetch("https://favqs.com/api/quotes", {
-    headers: {
-      Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
-    },
-  })
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      // console.log(data);
-      console.log(data.quotes[0].body);
-      console.log(data.quotes[0].author);
-      var quoteData = data.quotes[0].body;
-      var quoteAuthor = data.quotes[0].author;
-      var userQuotes = {
-        quoteData,
-        quoteAuthor,
-      };
-      storedQuotes.push(userQuotes);
-      localStorage.setItem("storedQuotes", JSON.stringify(storedQuotes));
-      console.log(storedQuotes);
-      //BELOW - ready to go code for grabbing quote and author text output
-      //   storedQuotes[i].quoteData
-      //   storedQuotes[i].quoteAuthor
-    });
-
-  console.log(event);
-  //   event.preventDefault();
-  //   console.log(e);
-  //   console.log(e.target.dataset.chart);
   moodInput = event.target.dataset.chart;
   console.log(moodInput);
   var userObj = {
@@ -155,16 +123,15 @@ function getData(event) {
   };
   // // UPDATE SAVED MOOD DATA (ARRAY)
   storedLatestMoods.push(userObj);
-  //   storedMonthlyMoods.push(userObj);
   // // SET LOCAL STORAGE TO UPDATED DATA (STRINGIFIED)
   localStorage.setItem("latestMoods", JSON.stringify(storedLatestMoods));
   //   localStorage.setItem("monthlyMoods", JSON.stringify(storedMonthlyMoods));
   console.log(storedLatestMoods);
 
   //YouTube search term input capture
-  var musicData = event.target.dataset.mood;
+  var moodData = event.target.dataset.mood;
   console.log(event.target.dataset.mood);
-  localStorage.setItem("musicData", musicData);
+  localStorage.setItem("moodData", moodData);
 }
 
 function clearRecent(e) {
