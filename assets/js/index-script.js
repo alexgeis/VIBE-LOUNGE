@@ -1,11 +1,15 @@
 // when user clicks chill button, console log a return quote var
 var chillBtn = document.querySelector(".btn-chill");
 var stokedBtn = document.querySelector(".btn-stoked");
+var zenBtn = document.querySelector(".btn-zen");
 var stressedBtn = document.querySelector(".btn-stressed");
 var heavyBtn = document.querySelector(".btn-heavy");
+var clearBtn = document.querySelector("#clearHistory");
+// var clearModal = document.querySelector("#clearModal");
 //chart variables
 var now = moment().format("ddd, h:mm A");
 console.log(now);
+let myChart;
 
 //time variables examples
 // var today = moment().format("L"); // MM/DD/YYY
@@ -14,6 +18,8 @@ console.log(now);
 //local storage arrays
 var storedLatestMoods = JSON.parse(localStorage.getItem("latestMoods")) || [];
 var storedQuotes = JSON.parse(localStorage.getItem("storedQuotes")) || [];
+// var storedMusicSearch =
+//   JSON.parse(localStorage.getItem("storedMusicSearch")) || [];
 //Below can be used to store monthly chart
 // var storedMonthlyMoods = JSON.parse(localStorage.getItem("monthlyMoods")) || [];
 
@@ -54,6 +60,7 @@ function latestChart() {
     const moodX = storedLatestMoods[i].moodInput;
     const timeY = storedLatestMoods[i].now;
     data.datasets[0].data.push(moodX);
+    console.log(moodX);
     if (data.datasets[0].data.length == 8) {
       data.datasets[0].data.shift();
     }
@@ -98,7 +105,7 @@ function latestChart() {
   //   if (myChart instanceof Chart) {
   //     myChart.destroy();
   //   }
-  const myChart = new Chart(document.getElementById("myChart"), config);
+  myChart = new Chart(document.getElementById("myChart"), config);
 }
 latestChart();
 
@@ -141,7 +148,7 @@ function getData(event) {
   //   console.log(e);
   //   console.log(e.target.dataset.chart);
   moodInput = event.target.dataset.chart;
-
+  console.log(moodInput);
   var userObj = {
     now,
     moodInput,
@@ -153,22 +160,36 @@ function getData(event) {
   localStorage.setItem("latestMoods", JSON.stringify(storedLatestMoods));
   //   localStorage.setItem("monthlyMoods", JSON.stringify(storedMonthlyMoods));
   console.log(storedLatestMoods);
-  //   console.log(storedMonthlyMoods);
-  //   latestChart();
-  //   monthChart();
+
+  //YouTube search term input capture
+  var musicData = event.target.dataset.mood;
+  console.log(event.target.dataset.mood);
+  localStorage.setItem("musicData", musicData);
+}
+
+function clearRecent(e) {
+  e.preventDefault();
+  console.log(myChart);
+  localStorage.clear();
+  myChart.destroy();
+  location.reload();
+  latestChart();
 }
 
 //create an event listener on the chill button.
 
 chillBtn.addEventListener("click", getData);
 stokedBtn.addEventListener("click", getData);
+zenBtn.addEventListener("click", getData);
 stressedBtn.addEventListener("click", getData);
 heavyBtn.addEventListener("click", getData);
+clearBtn.addEventListener("click", clearRecent);
 
 // monthly chart - starter code
 /*
 //last 30 visits chart
 function monthChart() {
+  myChart.destroy();
   const labels = [];
 
   const up = (ctx, value) =>
