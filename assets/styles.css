@@ -96,6 +96,9 @@ a p {
   top: 20%;
   font-style: italic;
 }
+.carouselWrapper {
+  position: relative;
+}
 #card1box {
   background-image: url(https://images.unsplash.com/photo-1645611868479-c5aa51b8e77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
 }

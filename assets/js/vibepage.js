@@ -2,7 +2,7 @@ var active = document.querySelector(".active");
 var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector(".quote");
 var authorBox = document.querySelector(".author");
-
+var searchTerm = localStorage.getItem("moodData");
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
   fetch("https://api.pexels.com/v1/search?query=relax", {
@@ -24,16 +24,6 @@ function callImage() {
         imgEl.classList.add("d-block");
         imgEl.classList.add("w-100");
         imgCarNext.children[i].appendChild(imgEl);
-        var quoteEl = document.createElement("div");
-        quoteEl.classList.add("top-right");
-        quoteEl.classList.add("quote");
-        var authorEl = document.createElement("div");
-        authorEl.classList.add("top-right");
-        authorEl.classList.add("author");
-        quoteEl.textContent = "Hellow World";
-        authorEl.textContent = "~The great and powerful Rick";
-        imgCarNext.children[i].appendChild(quoteEl);
-        imgCarNext.children[i].appendChild(authorEl);
       }
 
       //goes to next image in array
@@ -49,9 +39,8 @@ function callImage() {
 }
 callImage();
 
-function callQuote() {
-  // Return an inspirational quote from the API and log it to the console.
-  fetch("https://favqs.com/api/quotes", {
+function getQuoteType() {
+  fetch("https://favqs.com/api/typeahead", {
     headers: {
       Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
     },
@@ -61,13 +50,31 @@ function callQuote() {
     })
     .then(function (data) {
       console.log(data);
-      console.log(data.quotes[0].body);
-      console.log(data.quotes[0].author);
     });
 }
-callQuote();
+getQuoteType();
 
-playlistSearch("chill");
+function callQuote() {
+  // Return an inspirational quote from the API and log it to the console.
+  fetch("https://favqs.com/api/quotes/?filter=" + searchTerm + "&type=tag", {
+    headers: {
+      Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      // console.log(data.quotes[0].body);
+      // console.log(data.quotes[0].author);
+      quoteBox.textContent = data.quotes[0].body;
+      authorBox.textContent = data.quotes[0].author;
+    });
+}
+// callQuote();
+
+playlistSearch(searchTerm);
 
 function playlistSearch(searchList) {
   fetch(
@@ -84,7 +91,7 @@ function playlistSearch(searchList) {
     .then((data) => {
       var index1 = Math.floor(Math.random() * 5);
       var randomPlaylist = data.items[index1];
-      var playlistId = randomPlaylist.id.playlis;
+      var playlistId = randomPlaylist.id.playlistId;
 
       playlistData(playlistId);
     })
