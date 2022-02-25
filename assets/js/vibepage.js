@@ -3,6 +3,8 @@ var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector(".quote");
 var authorBox = document.querySelector(".author");
 var searchTerm = localStorage.getItem("moodData");
+
+//test
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
   fetch("https://api.pexels.com/v1/search?query=relax", {
