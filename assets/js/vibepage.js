@@ -2,7 +2,7 @@ var active = document.querySelector(".active");
 var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector(".quote");
 var authorBox = document.querySelector(".author");
-console.log(imgCarNext);
+
 
 //sets the time interval for how often pictures change in the carousel
 // function setTime() {
@@ -57,9 +57,7 @@ function callImage() {
       //goes to next image in array
       function changeImage() {
         picIndex++;
-        if (picIndex == result.photos.length) {
-          picIndex = 0;
-        }
+
       }
 
       //Timer for changing images at an interval
