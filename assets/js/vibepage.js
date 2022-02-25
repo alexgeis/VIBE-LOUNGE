@@ -1,5 +1,5 @@
 var imgCar = document.querySelector(".active");
-var quoteBox = document.querySelector(".top-right");
+var quoteBox = document.querySelector(".quote");
 var authorBox = document.querySelector(".author");
 
 var pictureIndex = 0;
