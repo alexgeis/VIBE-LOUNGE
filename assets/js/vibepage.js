@@ -52,76 +52,61 @@ function callImage() {
 
 callImage();
 
+playlistSearch("chill")
+
+function playlistSearch(searchList) {
+  fetch(
+      "https://www.googleapis.com/youtube/v3/search?q=" + searchList + "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU", {
+        method: "GET",
+      }
+    )
+    .then((res) => {
+
+      return res.json();
+    })
+    .then((data) => {
+      var index1 = Math.floor(Math.random() * 5)
+      var randomPlaylist = data.items[index1]
+      var playlistId = randomPlaylist.id.playlis
+
+      playlistData(playlistId)
 
 
 
-$(document).ready(function () {
-
-  var key = [AIzaSyABQ8JoEM8APRG7n5Kp5Wjw7P8 - DKHMclU];
-  var playlistId = 'lexCOB9axWA&t=116s';
-  var URL = 'https://www.googleapis.com/youtube/v3/playlistItems';
 
 
-  var options = {
-    part: 'snippet',
-    key: key,
-    maxResults: 20,
-    playlistId: playlistId
-  };
-
-  loadVids();
-
-  function loadVids() {
-    $.getJSON(URL, options, function (data) {
-      var id = data.items[0].snippet.resourceId.videoId;
-      mainVid(id);
-      resultsLoop(data);
-      console.log(data)
-    });
-  }
-
-  function mainVid(id) {
-    $('#video').html(`
-          << iframe id = "ytplayer"
-          type = "text/html"
-          width = "150"
-          height = "84.375"
-          src = "https://www.youtube.com/embed/lexCOB9axWA?playlist=&version=3&autoplay=1&color=white"
-          frameborder = "0"
-          allowfullscreen >>
-        `);
-  }
 
 
-  function resultsLoop(data) {
-
-    $.each(data.items, function (i, item) {
-
-      var thumb = item.snippet.thumbnails.medium.url;
-      var title = item.snippet.title;
-      var desc = item.snippet.description.substring(0, 100);
-      var vid = item.snippet.resourceId.videoId;
 
 
-      $('main').append(`
-              <article class="item" data-key="${vid}">
+    })
 
-              <img src="${thumb}" alt="" class="thumb">
-                <div class="details">
-                  <h4>${title}</h4>
-                  <p>${desc}</p>
-                </div>
-
-              </article>
-            `);
-    });
-  }
-
-  // CLICK EVENT
-  $('main').on('click', 'article', function () {
-    var id = $(this).attr('data-key');
-    mainVid(id);
-  });
+    .catch((err) => console.error(err));
 
 
-});
+}
+
+function playlistData(playlistId) {
+  fetch(
+      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU&id=" + playlistId + "&part=player", {
+        method: "GET",
+      }
+    )
+    .then((res) => {
+      console.log(res);
+      return res.json();
+    })
+    .then((data) => console.log(data))
+
+
+
+
+
+
+
+    .catch((err) => console.error(err));
+
+
+
+
+}
