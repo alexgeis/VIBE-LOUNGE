@@ -57,7 +57,6 @@ function callImage() {
       //goes to next image in array
       function changeImage() {
         picIndex++;
-
       }
 
       //Timer for changing images at an interval
