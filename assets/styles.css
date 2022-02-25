@@ -31,6 +31,11 @@ a p {
 .active {
   display: flex;
 }
+.author {
+  font-size: 0.8rem;
+  color: #99d98c;
+  text-decoration: underline;
+}
 .btn {
   margin-top: 2rem;
   max-height: 15rem;
@@ -67,6 +72,12 @@ a p {
   padding: 2rem, 2rem;
   padding-bottom: 5%;
 }
+.hidden {
+  visibility: hidden;
+}
+.show {
+  visibility: visible;
+}
 .logo {
   height: 100px;
 }
@@ -78,11 +89,12 @@ a p {
   color: #76c893;
 }
 
-.author {
-  font-size: 0.8rem;
-  color: #99d98c;
-}
 .vibe-box {
+}
+.quote {
+  position: absolute;
+  top: 20%;
+  font-style: italic;
 }
 #card1box {
   background-image: url(https://images.unsplash.com/photo-1645611868479-c5aa51b8e77f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
