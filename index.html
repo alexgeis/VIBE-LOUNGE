@@ -17,6 +17,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Vibe Lounge</title>
   </head>
   <body>
@@ -101,7 +102,60 @@
       </section>
 
       <section class="chart-box">
-        <div style="height: 60%; width: 100%; background-color: white">
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#clearModal"
+        >
+          Launch demo modal
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="clearModal"
+          tabindex="-1"
+          aria-labelledby="Clear History Modal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h6 class="modal-title" id="exampleModalLabel">
+                  Clear History Confirmation
+                </h6>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">Clearing history cannot be undone.</div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="clearHistory"
+                  data-bs-dismiss="modal"
+                >
+                  Clear History
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CHART -->
+        <div style="width: 100%; background-color: white">
           <canvas id="myChart" aria-label="Recent Mood History Chart"></canvas>
         </div>
       </section>
