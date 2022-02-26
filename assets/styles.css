@@ -34,6 +34,7 @@ a p {
   font-size: 0.8rem;
   color: #99d98c;
   text-decoration: underline;
+  z-index: 1000;
 }
 .btn {
   margin-top: 2rem;
@@ -94,6 +95,7 @@ a p {
   position: absolute;
   top: 20%;
   font-style: italic;
+  z-index: 1000;
 }
 .carouselWrapper {
   position: relative;

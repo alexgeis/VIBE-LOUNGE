@@ -53,10 +53,14 @@ function checkMood() {
       });
   }
   getQuoteType();
+
   //calls a specific quote
   function callQuote() {
     // Return an inspirational quote from the API and log it to the console.
-    fetch("https://favqs.com/api/quotes/?filter=" + searchTerm + "&type=tag", {
+    var searchCall =
+      "https://favqs.com/api/quotes/?filter=" + tagFilter + "&type=tag";
+    console.log(searchCall);
+    fetch(searchCall, {
       headers: {
         Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
       },
