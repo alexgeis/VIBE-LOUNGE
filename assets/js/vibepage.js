@@ -120,6 +120,7 @@ callImage();
 if (localStorage.getItem(searchTerm) == null) {
   playlistSearch(searchTerm);
 } else {
+
   playVideo();
 }
 
@@ -138,6 +139,7 @@ function playlistSearch(searchList) {
       var index1 = Math.floor(Math.random() * 5);
       var randomPlaylist = data.items[index1];
       var playlistId = randomPlaylist.id.playlistId;
+
       playlistData(playlistId);
       // Put the object into storage
       localStorage.setItem("playlist", JSON.stringify(data));
