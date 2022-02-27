@@ -12,7 +12,7 @@ header {
   padding: 1rem;
 }
 h2 {
-  font-family: 'Shippori Antique B1', sans-serif;
+  font-family: "Shippori Antique B1", sans-serif;
   font-weight: 700;
   color: white;
   text-align: center;
@@ -22,7 +22,7 @@ h5 {
   color: white;
 }
 p {
-  font-family: 'Shippori Antique B1', sans-serif;
+  font-family: "Shippori Antique B1", sans-serif;
   color: white;
 }
 a p {
@@ -33,7 +33,8 @@ a p {
   display: flex;
 }
 .author {
-  font-size: 0.8rem;
+  font-family: "Lobster", cursive;
+  font: size 2rem;
   color: #99d98c;
   text-decoration: underline;
   z-index: 1000;
@@ -69,6 +70,8 @@ a p {
   height: 300px;
   max-width: 100%;
 }
+.clearHistory {
+}
 .feelings {
   background-color: #1a759f;
   padding: 2rem, 2rem;
@@ -94,8 +97,10 @@ a p {
 .vibe-box {
 }
 .quote {
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
   position: absolute;
-  top: 20%;
+  top: 10%;
   font-style: italic;
   z-index: 1000;
 }
