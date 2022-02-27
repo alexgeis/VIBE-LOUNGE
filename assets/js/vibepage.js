@@ -22,15 +22,15 @@ function checkMood() {
   );
   var randomNumber5 = Math.floor(Math.random() * tagFiltersArr[0].heavy.length);
 
-  if (searchTerm == "stoked") {
+  if (searchTerm == "party") {
     var tagFilter = tagFiltersArr[0].stoked[randomNumber1];
   } else if (searchTerm == "chill") {
     var tagFilter = tagFiltersArr[0].chill[randomNumber2];
   } else if (searchTerm == "zen") {
     var tagFilter = tagFiltersArr[0].zen[randomNumber3];
-  } else if (searchTerm == "stressed") {
+  } else if (searchTerm == "anxious") {
     var tagFilter = tagFiltersArr[0].stressed[randomNumber4];
-  } else if (searchTerm == "heavy") {
+  } else if (searchTerm == "dark") {
     var tagFilter = tagFiltersArr[0].heavy[randomNumber5];
   }
   console.log(tagFilter);
