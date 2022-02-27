@@ -3,15 +3,13 @@ var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector("#quote");
 var authorBox = document.querySelector("#author");
 var searchTerm = localStorage.getItem("moodData");
-var tagFiltersArr = [
-  {
-    stoked: ["Freedom", "Motivational", "Happy"],
-    chill: ["Nature", "Proverb", "Idiom"],
-    zen: ["Religon", "Wisdom", "Insperational"],
-    stressed: ["Anger", "Jealousy", "Risk"],
-    heavy: ["Death", "Sarcasm", "Violence", "Fear"],
-  },
-];
+var tagFiltersArr = [{
+  stoked: ["Freedom", "Motivational", "Happy"],
+  chill: ["Nature", "Proverb", "Idiom"],
+  zen: ["Religon", "Wisdom", "Insperational"],
+  stressed: ["Anger", "Jealousy", "Risk"],
+  heavy: ["Death", "Sarcasm", "Violence", "Fear"],
+}, ];
 //test
 function checkMood() {
   var randomNumber1 = Math.floor(
@@ -39,10 +37,10 @@ function checkMood() {
   //returns an object that shows the api's list of quotes tags
   function getQuoteType() {
     fetch("https://favqs.com/api/typeahead", {
-      headers: {
-        Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
-      },
-    })
+        headers: {
+          Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
+        },
+      })
       .then(function (response) {
         return response.json();
         console.log(response);
@@ -61,10 +59,10 @@ function checkMood() {
       "https://favqs.com/api/quotes/?filter=" + tagFilter + "&type=tag";
     console.log(searchCall);
     fetch(searchCall, {
-      headers: {
-        Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
-      },
-    })
+        headers: {
+          Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
+        },
+      })
       .then(function (response) {
         console.log(response.status);
         return response.json();
@@ -83,10 +81,10 @@ checkMood();
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
   fetch("https://api.pexels.com/v1/search?query=" + searchTerm, {
-    headers: {
-      Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
-    },
-  })
+      headers: {
+        Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
+      },
+    })
     .then((res) => res.json())
     .then((result) => {
       console.log(result);
@@ -127,13 +125,12 @@ if (localStorage.getItem(searchTerm) == null) {
 
 function playlistSearch(searchList) {
   fetch(
-    "https://www.googleapis.com/youtube/v3/search?q=" +
+      "https://www.googleapis.com/youtube/v3/search?q=" +
       searchList +
-      "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU",
-    {
-      method: "GET",
-    }
-  )
+      "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU", {
+        method: "GET",
+      }
+    )
     .then((res) => {
       return res.json();
     })
@@ -153,14 +150,13 @@ function playlistSearch(searchList) {
 
 function playlistData(playlistId) {
   fetch(
-    "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU" +
+      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU" +
       "&id=" +
       playlistId +
-      "&part=player",
-    {
-      method: "GET",
-    }
-  )
+      "&part=player", {
+        method: "GET",
+      }
+    )
     .then((res) => {
       //  console.log(res);
       return res.json();
