@@ -14,7 +14,7 @@ var tagFiltersArr = [
 ];
 //test
 function checkMood() {
-  var randomNumber1 = Math.floor(0
+  var randomNumber1 = Math.floor(
     Math.random() * tagFiltersArr[0].stoked.length
   );
   var randomNumber2 = Math.floor(Math.random() * tagFiltersArr[0].chill.length);
