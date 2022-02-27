@@ -1,6 +1,6 @@
-/* font-family: 'Lobster', cursive;
-font-family: 'Open Sans Condensed', sans-serif; */
-
+/* 
+font-family: 'Lobster', cursive;
+font-family: 'Shippori Antique B1', sans-serif; */
 
 :root {
   background-color: #184e77;
@@ -12,7 +12,8 @@ header {
   padding: 1rem;
 }
 h2 {
-  font-family: font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Shippori Antique B1', sans-serif;
+  font-weight: 700;
   color: white;
   text-align: center;
   font-size: 4rem;
@@ -21,7 +22,7 @@ h5 {
   color: white;
 }
 p {
-  font-family: font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Shippori Antique B1', sans-serif;
   color: white;
 }
 a p {
@@ -35,6 +36,7 @@ a p {
   font-size: 0.8rem;
   color: #99d98c;
   text-decoration: underline;
+  z-index: 1000;
 }
 .btn {
   margin-top: 2rem;
@@ -95,6 +97,7 @@ a p {
   position: absolute;
   top: 20%;
   font-style: italic;
+  z-index: 1000;
 }
 .carouselWrapper {
   position: relative;
