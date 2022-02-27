@@ -1,6 +1,6 @@
 /* 
 font-family: 'Lobster', cursive;
-font-family: 'Shippori Antique B1', sans-serif; */
+font-family: 'Poppins', sans-serif; */
 
 :root {
   background-color: #184e77;
@@ -12,7 +12,7 @@ header {
   padding: 1rem;
 }
 h2 {
-  font-family: "Shippori Antique B1", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
   color: white;
   text-align: center;
@@ -22,7 +22,7 @@ h5 {
   color: white;
 }
 p {
-  font-family: "Shippori Antique B1", sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
 }
 a p {
