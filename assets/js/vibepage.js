@@ -180,5 +180,5 @@ function playVideo() {
   let div = document.createElement("div");
   div.className = "alert";
   div.innerHTML = obj["items"]["0"]["player"]["embedHtml"];
-  document.body.append(div);
+  document.carouselBox.append(div);
 }
