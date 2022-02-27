@@ -43,7 +43,7 @@
               data-chart="100"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a upbeat hyper active enviorment for the user experience"
+              title="Creates a upbeat hyper active environment for the user experience"
             >
               <h5>Stoked</h5>
             </a>
@@ -56,7 +56,7 @@
               data-chart="50"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a soothing and relaxing enviorment for the user experience"
+              title="Creates a soothing and relaxing environment for the user experience"
             >
               <h5>Chill</h5>
             </a>
@@ -69,7 +69,7 @@
               data-chart="0"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a neutral enviorment for the user experience"
+              title="Creates a neutral environment for the user experience"
             >
               <h5>Zen</h5>
             </a>
@@ -82,7 +82,7 @@
               data-chart="-50"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a chaotic dissonant enviorment for the user experience"
+              title="Creates a chaotic dissonant environment for the user experience"
             >
               <h5>Stressed</h5>
             </a>
@@ -94,7 +94,7 @@
               data-chart="-100"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a radical and extreme enviorment for the user experience"
+              title="Creates a radical and extreme environment for the user experience"
             >
               <h5>Heavy</h5>
             </a>
@@ -104,15 +104,17 @@
 
       <section class="chart-box">
         <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn btn-primary clearHistory"
-          data-bs-toggle="modal"
-          data-bs-target="#clearModal"
-        >
-          Launch demo modal
-        </button>
-
+        <div class="button-wrapper">
+          <button
+            type="button"
+            class="btn clearHistory"
+            data-bs-toggle="modal"
+            data-bs-target="#clearModal"
+            style="font-size: 1rem"
+          >
+            Clear History
+          </button>
+        </div>
         <!-- Modal -->
         <div
           class="modal fade"
@@ -140,14 +142,16 @@
                   type="button"
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
+                  style="font-size: 1rem"
                 >
                   Close
                 </button>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn"
                   id="clearHistory"
                   data-bs-dismiss="modal"
+                  style="font-size: 1rem"
                 >
                   Clear History
                 </button>
@@ -159,9 +163,29 @@
         <div style="width: 100%; background-color: white">
           <canvas id="myChart" aria-label="Recent Mood History Chart"></canvas>
         </div>
+        <div class="project-tag">
+          <p>
+            Presented by: <br />
+            Michael Bee
+            <a href="https://github.com/Michael-Bee" target="_blank"
+              >@Michael-Bee</a
+            >
+            , Alex Geis
+            <a href="https://github.com/alexgeis" target="_blank">@alexgeis</a>
+            , Max Gorodesky
+            <a href="https://github.com/jmg5369" target="_blank">@jmg5369</a>,
+            Nick Graves
+            <a href="https://github.com/Thekid303" target="_blank"
+              >@Thekid303</a
+            >
+            and Rick Morrissette
+            <a href="https://github.com/confusedicarus" target="_blank"
+              >@confusedicarus</a
+            >
+          </p>
+        </div>
       </section>
     </main>
-
     <!-- MOMENT JS SCRIPT -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
