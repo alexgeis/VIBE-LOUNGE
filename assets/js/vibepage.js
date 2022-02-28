@@ -2,25 +2,16 @@ var active = document.querySelector(".active");
 var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector("#quote");
 var authorBox = document.querySelector("#author");
-var searchTerm = localStorage.getItem("moodData"); <<
-<< << < HEAD
+var searchTerm = localStorage.getItem("moodData");
 var tagFiltersArr = [{
   stoked: ["Freedom", "Motivational", "Happy"],
   chill: ["Nature", "Proverb", "Idiom"],
   zen: ["Religon", "Wisdom", "Insperational"],
   stressed: ["Anger", "Jealousy", "Risk"],
   heavy: ["Death", "Sarcasm", "Violence", "Fear"],
-}, ]; ===
-=== =
-var tagFiltersArr = [{
-  stoked: ["Freedom", "Motivational", "Happy"],
-  chill: ["Nature", "Proverb", "Idiom"],
-  zen: ["Religion", "Wisdom", "Inspirational"],
-  stressed: ["Anger", "Jealousy", "Risk"],
-  heavy: ["Death", "Sarcasm", "Violence", "Fear"],
-}, ]; >>>
->>> > main
-//test
+}, ];
+
+
 function checkMood() {
   var randomNumber1 = Math.floor(
     Math.random() * tagFiltersArr[0].stoked.length
@@ -199,6 +190,3 @@ function playVideo() {
   div.innerHTML = obj["items"]["0"]["player"]["embedHtml"];
   document.body.append(div);
 }
-
-
-// hello 
