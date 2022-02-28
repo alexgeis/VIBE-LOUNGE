@@ -3,6 +3,7 @@ var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector("#quote");
 var authorBox = document.querySelector("#author");
 var searchTerm = localStorage.getItem("moodData");
+<<<<<<< HEAD
 var tagFiltersArr = [{
   stoked: ["Freedom", "Motivational", "Happy"],
   chill: ["Nature", "Proverb", "Idiom"],
@@ -10,6 +11,17 @@ var tagFiltersArr = [{
   stressed: ["Anger", "Jealousy", "Risk"],
   heavy: ["Death", "Sarcasm", "Violence", "Fear"],
 }, ];
+=======
+var tagFiltersArr = [
+  {
+    stoked: ["Freedom", "Motivational", "Happy"],
+    chill: ["Nature", "Proverb", "Idiom"],
+    zen: ["Religion", "Wisdom", "Inspirational"],
+    stressed: ["Anger", "Jealousy", "Risk"],
+    heavy: ["Death", "Sarcasm", "Violence", "Fear"],
+  },
+];
+>>>>>>> main
 //test
 function checkMood() {
   var randomNumber1 = Math.floor(
@@ -71,8 +83,8 @@ function checkMood() {
         console.log(data);
         console.log(data.quotes[0].body);
         console.log(data.quotes[0].author);
-        quoteBox.textContent = data.quotes[0].body;
-        authorBox.textContent = data.quotes[0].author;
+        quoteBox.textContent = '"' + data.quotes[0].body + '"';
+        authorBox.textContent = "-- " + data.quotes[0].author;
       });
   }
   callQuote();
