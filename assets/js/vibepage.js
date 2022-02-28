@@ -118,23 +118,30 @@ callImage();
 // if to limit number of API calls
 
 if (localStorage.getItem(searchTerm) == null) {
-  playlistSearch(searchTerm);
+  playlistSearch(searchTerm)
 } else {
-
-  playVideo();
+  playlistSearch(searchTerm)
 }
 
+
+
 function playlistSearch(searchList) {
+
   fetch(
-      "https://www.googleapis.com/youtube/v3/search?q=" +
-      searchList +
-      "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU", {
-        method: "GET",
-      }
+      "https://www.googleapis.com/youtube/v3/search?q=" + searchList + "&type=playlist&key=AIzaSyBZ7w-nQ2E4HdrYG6J9Y_GdJ-iwT31mLaA"
+
+
     )
-    .then((res) => {
-      return res.json();
+
+    .then((response) => {
+
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        alert(" the YT api failed with a respone of  " + response.status);
+      }
     })
+
     .then((data) => {
       var index1 = Math.floor(Math.random() * 5);
       var randomPlaylist = data.items[index1];
@@ -152,7 +159,7 @@ function playlistSearch(searchList) {
 
 function playlistData(playlistId) {
   fetch(
-      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU" +
+      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyBZ7w-nQ2E4HdrYG6J9Y_GdJ-iwT31mLaA" +
       "&id=" +
       playlistId +
       "&part=player", {
@@ -180,5 +187,5 @@ function playVideo() {
   let div = document.createElement("div");
   div.className = "alert";
   div.innerHTML = obj["items"]["0"]["player"]["embedHtml"];
-  document.carouselBox.append(div);
+  document.body.append(div);
 }

@@ -11,6 +11,7 @@ header {
   justify-content: left;
   padding: 1rem;
 }
+
 h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -51,6 +52,9 @@ a p {
   border: solid 5px #555;
   border-radius: 1rem;
 }
+.button-wrapper {
+  text-align: center;
+}
 .card {
   margin-top: 2rem;
 }
@@ -71,6 +75,7 @@ a p {
   max-width: 100%;
 }
 .clearHistory {
+  border: none;
 }
 .feelings {
   background-color: #1a759f;
@@ -86,6 +91,23 @@ a p {
 .logo {
   height: 100px;
 }
+.project-tag {
+  background-color: #184e77;
+  width: 100%;
+  height: 20%;
+  font-size: 1rem;
+  text-align: center;
+}
+.project-tag p {
+  color: #333;
+}
+.quote {
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
+  position: absolute;
+  font-style: italic;
+  z-index: 1000;
+}
 .top-right {
   position: absolute;
   top: 8px;
@@ -94,15 +116,12 @@ a p {
   color: #76c893;
 }
 
-.vibe-box {
-}
-.quote {
-  font-size: 2rem;
-  font-family: "Lobster", cursive;
-  position: absolute;
-  top: 10%;
-  font-style: italic;
-  z-index: 1000;
+.alert { 
+background-color: #184E77;
+display:flex;
+justify-content:center;
+align-items:center;
+
 }
 .carouselWrapper {
   position: relative;
