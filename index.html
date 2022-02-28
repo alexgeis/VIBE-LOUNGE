@@ -12,7 +12,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Vibe Lounge</title>
@@ -36,11 +36,11 @@
               href="./vibepage.html"
               id="card2box"
               class="card-btn btn btn-stoked"
-              data-mood="stoked"
+              data-mood="party"
               data-chart="100"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a upbeat hyper active enviorment for the user experience"
+              title="Creates a upbeat hyper active environment for the user experience"
             >
               <h5>Stoked</h5>
             </a>
@@ -53,7 +53,7 @@
               data-chart="50"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a soothing and relaxing enviorment for the user experience"
+              title="Creates a soothing and relaxing environment for the user experience"
             >
               <h5>Chill</h5>
             </a>
@@ -66,7 +66,7 @@
               data-chart="0"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a neutral enviorment for the user experience"
+              title="Creates a neutral environment for the user experience"
             >
               <h5>Zen</h5>
             </a>
@@ -75,11 +75,11 @@
               href="./vibepage.html"
               id="card3box"
               class="card-btn btn btn-stressed"
-              data-mood="stressed"
+              data-mood="anxious"
               data-chart="-50"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a chaotic dissonant enviorment for the user experience"
+              title="Creates a chaotic dissonant environment for the user experience"
             >
               <h5>Stressed</h5>
             </a>
@@ -87,11 +87,11 @@
               href="./vibepage.html"
               id="card4box"
               class="card-btn btn btn-heavy"
-              data-mood="heavy"
+              data-mood="dark"
               data-chart="-100"
               data-bs-toggle="tooltip"
               data-bs-placement="bottom"
-              title="Creates a radical and extreme enviorment for the user experience"
+              title="Creates a radical and extreme environment for the user experience"
             >
               <h5>Heavy</h5>
             </a>
@@ -101,15 +101,17 @@
 
       <section class="chart-box">
         <!-- Button trigger modal -->
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-toggle="modal"
-          data-bs-target="#clearModal"
-        >
-          Launch demo modal
-        </button>
-
+        <div class="button-wrapper">
+          <button
+            type="button"
+            class="btn clearHistory"
+            data-bs-toggle="modal"
+            data-bs-target="#clearModal"
+            style="font-size: 1rem"
+          >
+            Clear History
+          </button>
+        </div>
         <!-- Modal -->
         <div
           class="modal fade"
@@ -137,14 +139,16 @@
                   type="button"
                   class="btn btn-secondary"
                   data-bs-dismiss="modal"
+                  style="font-size: 1rem"
                 >
                   Close
                 </button>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn"
                   id="clearHistory"
                   data-bs-dismiss="modal"
+                  style="font-size: 1rem"
                 >
                   Clear History
                 </button>
@@ -158,7 +162,29 @@
         </div>
       </section>
     </main>
-
+    <footer>
+      <div class="project-tag">
+          <p>
+            Presented by: <br />
+            Michael Bee
+            <a href="https://github.com/Michael-Bee" target="_blank"
+              >@Michael-Bee</a
+            >
+            , Alex Geis
+            <a href="https://github.com/alexgeis" target="_blank">@alexgeis</a>
+            , Max Gorodesky
+            <a href="https://github.com/jmg5369" target="_blank">@jmg5369</a>
+            , Nick Graves
+            <a href="https://github.com/Thekid303" target="_blank"
+              >@Thekid303</a
+            >
+            , and Rick Morrissette
+            <a href="https://github.com/confusedicarus" target="_blank"
+              >@confusedicarus</a
+            >
+          </p>
+        </div>
+    </footer>
     <!-- MOMENT JS SCRIPT -->
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"

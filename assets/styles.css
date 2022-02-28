@@ -1,6 +1,6 @@
 /* 
 font-family: 'Lobster', cursive;
-font-family: 'Shippori Antique B1', sans-serif; */
+font-family: 'Poppins', sans-serif; */
 
 :root {
   background-color: #184e77;
@@ -10,10 +10,12 @@ header {
   display: flex;
   justify-content: left;
   padding: 1rem;
+  border-bottom: 10px solid #333;
 }
+
 h2 {
-  font-family: 'Shippori Antique B1', sans-serif;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
   color: white;
   text-align: center;
   font-size: 4rem;
@@ -22,7 +24,7 @@ h5 {
   color: white;
 }
 p {
-  font-family: 'Shippori Antique B1', sans-serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
 }
 a p {
@@ -32,12 +34,7 @@ a p {
 .active {
   display: flex;
 }
-.author {
-  font-size: 0.8rem;
-  color: #99d98c;
-  text-decoration: underline;
-  z-index: 1000;
-}
+
 .btn {
   margin-top: 2rem;
   max-height: 15rem;
@@ -49,6 +46,9 @@ a p {
   font-size: 3rem;
   border: solid 5px #555;
   border-radius: 1rem;
+}
+.button-wrapper {
+  text-align: center;
 }
 .card {
   margin-top: 2rem;
@@ -68,11 +68,15 @@ a p {
   background-color: #184e77;
   height: 300px;
   max-width: 100%;
+  height: auto;
+}
+.clearHistory {
+  border: none;
 }
 .feelings {
   background-color: #1a759f;
   padding: 2rem, 2rem;
-  padding-bottom: 5%;
+  padding: 25px 0px 5%;
 }
 .hidden {
   visibility: hidden;
@@ -83,22 +87,42 @@ a p {
 .logo {
   height: 100px;
 }
+.project-tag {
+  background-color: #184e77;
+  width: 100%;
+  height: 20%;
+  font-size: 1rem;
+  color: #B5E48C;
+  text-align: center;
+  padding: 10px;
+}
+.project-tag p {
+  color: #B5E48C;
+}
+
 .top-right {
   position: absolute;
   top: 8px;
   right: 16px;
-  font-size: 1rem;
-  color: #76c893;
+  font-size: 2rem;
+  font-family: "Lobster", cursive;
+  color: white;
+  text-shadow: 2px 2px 7px black;
+  text-align: right;
+  z-index: 1000;
+  max-width: 75%;
 }
 
-.vibe-box {
+<<<<<<< HEAD
+.alert { 
+background-color: #184E77;
+display:flex;
+justify-content:center;
+align-items:center;
+
 }
-.quote {
-  position: absolute;
-  top: 20%;
-  font-style: italic;
-  z-index: 1000;
-}
+=======
+>>>>>>> main
 .carouselWrapper {
   position: relative;
 }

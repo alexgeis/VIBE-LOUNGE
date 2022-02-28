@@ -10,7 +10,8 @@ var tagFiltersArr = [{
   stressed: ["Anger", "Jealousy", "Risk"],
   heavy: ["Death", "Sarcasm", "Violence", "Fear"],
 }, ];
-//test
+
+
 function checkMood() {
   var randomNumber1 = Math.floor(
     Math.random() * tagFiltersArr[0].stoked.length
@@ -22,15 +23,15 @@ function checkMood() {
   );
   var randomNumber5 = Math.floor(Math.random() * tagFiltersArr[0].heavy.length);
 
-  if (searchTerm == "stoked") {
+  if (searchTerm == "party") {
     var tagFilter = tagFiltersArr[0].stoked[randomNumber1];
   } else if (searchTerm == "chill") {
     var tagFilter = tagFiltersArr[0].chill[randomNumber2];
   } else if (searchTerm == "zen") {
     var tagFilter = tagFiltersArr[0].zen[randomNumber3];
-  } else if (searchTerm == "stressed") {
+  } else if (searchTerm == "anxious") {
     var tagFilter = tagFiltersArr[0].stressed[randomNumber4];
-  } else if (searchTerm == "heavy") {
+  } else if (searchTerm == "dark") {
     var tagFilter = tagFiltersArr[0].heavy[randomNumber5];
   }
   console.log(tagFilter);
@@ -71,8 +72,8 @@ function checkMood() {
         console.log(data);
         console.log(data.quotes[0].body);
         console.log(data.quotes[0].author);
-        quoteBox.textContent = data.quotes[0].body;
-        authorBox.textContent = data.quotes[0].author;
+        quoteBox.textContent = '"' + data.quotes[0].body + '"';
+        authorBox.textContent = "-- " + data.quotes[0].author;
       });
   }
   callQuote();
@@ -80,7 +81,7 @@ function checkMood() {
 checkMood();
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
-  fetch("https://api.pexels.com/v1/search?query=relax", {
+  fetch("https://api.pexels.com/v1/search?query=" + searchTerm, {
       headers: {
         Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
       },
@@ -120,7 +121,7 @@ callImage();
 if (localStorage.getItem(searchTerm) == null) {
   playlistSearch(searchTerm)
 } else {
-  playVideo();
+  playlistSearch(searchTerm)
 }
 
 
@@ -128,37 +129,41 @@ if (localStorage.getItem(searchTerm) == null) {
 function playlistSearch(searchList) {
 
   fetch(
-      "https://www.googleapis.com/youtube/v3/search?q=" + searchList + "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU", {
-        method: "GET",
-      }
-    )
-    .then((res) => {
+      "https://www.googleapis.com/youtube/v3/search?q=" + searchList + "&type=playlist&key=AIzaSyBZ7w-nQ2E4HdrYG6J9Y_GdJ-iwT31mLaA"
 
-      return res.json();
+
+    )
+
+    .then((response) => {
+
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        alert(" the YT api failed with a respone of  " + response.status);
+      }
     })
+
     .then((data) => {
-      var index1 = Math.floor(Math.random() * 5)
-      var randomPlaylist = data.items[index1]
-      var playlistId = randomPlaylist.id.playlistId
-      playlistData(playlistId)
+      var index1 = Math.floor(Math.random() * 5);
+      var randomPlaylist = data.items[index1];
+      var playlistId = randomPlaylist.id.playlistId;
+
+      playlistData(playlistId);
       // Put the object into storage
-      localStorage.setItem('playlist', JSON.stringify(data));
+      localStorage.setItem("playlist", JSON.stringify(data));
 
       // Retrieve the object from storage
-
-
     })
 
     .catch((err) => console.error(err));
-
-
 }
-
-
 
 function playlistData(playlistId) {
   fetch(
-      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU" + "&id=" + playlistId + "&part=player", {
+      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyBZ7w-nQ2E4HdrYG6J9Y_GdJ-iwT31mLaA" +
+      "&id=" +
+      playlistId +
+      "&part=player", {
         method: "GET",
       }
     )
@@ -171,28 +176,17 @@ function playlistData(playlistId) {
       playVideo();
     })
 
-
-
-
-
     .catch((err) => console.error(err));
-
-
-
-
 }
 
 function playVideo() {
-
-
   var json = localStorage.getItem(searchTerm);
-  var obj = JSON.parse(json)
+  var obj = JSON.parse(json);
 
   var embedURL = obj["items"]["0"]["player"]["embedHtml"];
   console.log(embedURL);
-  let div = document.createElement('div');
+  let div = document.createElement("div");
   div.className = "alert";
   div.innerHTML = obj["items"]["0"]["player"]["embedHtml"];
   document.body.append(div);
-
 }
