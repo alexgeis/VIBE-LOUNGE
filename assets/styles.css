@@ -12,6 +12,7 @@ header {
   padding: 1rem;
   border-bottom: 10px solid #333;
 }
+
 h2 {
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
@@ -112,6 +113,16 @@ a p {
   max-width: 75%;
 }
 
+<<<<<<< HEAD
+.alert { 
+background-color: #184E77;
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+=======
+>>>>>>> main
 .carouselWrapper {
   position: relative;
 }

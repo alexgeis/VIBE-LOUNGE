@@ -3,16 +3,15 @@ var imgCarNext = document.querySelector(".carousel-inner");
 var quoteBox = document.querySelector("#quote");
 var authorBox = document.querySelector("#author");
 var searchTerm = localStorage.getItem("moodData");
-var tagFiltersArr = [
-  {
-    stoked: ["Freedom", "Motivational", "Happy"],
-    chill: ["Nature", "Proverb", "Idiom"],
-    zen: ["Religion", "Wisdom", "Inspirational"],
-    stressed: ["Anger", "Jealousy", "Risk"],
-    heavy: ["Death", "Sarcasm", "Violence", "Fear"],
-  },
-];
-//test
+var tagFiltersArr = [{
+  stoked: ["Freedom", "Motivational", "Happy"],
+  chill: ["Nature", "Proverb", "Idiom"],
+  zen: ["Religon", "Wisdom", "Insperational"],
+  stressed: ["Anger", "Jealousy", "Risk"],
+  heavy: ["Death", "Sarcasm", "Violence", "Fear"],
+}, ];
+
+
 function checkMood() {
   var randomNumber1 = Math.floor(
     Math.random() * tagFiltersArr[0].stoked.length
@@ -39,10 +38,10 @@ function checkMood() {
   //returns an object that shows the api's list of quotes tags
   function getQuoteType() {
     fetch("https://favqs.com/api/typeahead", {
-      headers: {
-        Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
-      },
-    })
+        headers: {
+          Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
+        },
+      })
       .then(function (response) {
         return response.json();
         console.log(response);
@@ -61,10 +60,10 @@ function checkMood() {
       "https://favqs.com/api/quotes/?filter=" + tagFilter + "&type=tag";
     console.log(searchCall);
     fetch(searchCall, {
-      headers: {
-        Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
-      },
-    })
+        headers: {
+          Authorization: `Token token="64434f7c59af706181286bb959dd3084"`,
+        },
+      })
       .then(function (response) {
         console.log(response.status);
         return response.json();
@@ -83,10 +82,10 @@ checkMood();
 //creates and appends images into the carousel uses the picture from the fetch request's json object
 function callImage() {
   fetch("https://api.pexels.com/v1/search?query=" + searchTerm, {
-    headers: {
-      Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
-    },
-  })
+      headers: {
+        Authorization: "563492ad6f91700001000001f0fbdce6b8e944fda3b656072a1d4665",
+      },
+    })
     .then((res) => res.json())
     .then((result) => {
       console.log(result);
@@ -120,27 +119,35 @@ callImage();
 // if to limit number of API calls
 
 if (localStorage.getItem(searchTerm) == null) {
-  playlistSearch(searchTerm);
+  playlistSearch(searchTerm)
 } else {
-  playVideo();
+  playlistSearch(searchTerm)
 }
 
+
+
 function playlistSearch(searchList) {
+
   fetch(
-    "https://www.googleapis.com/youtube/v3/search?q=" +
-      searchList +
-      "&type=playlist&key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU",
-    {
-      method: "GET",
-    }
-  )
-    .then((res) => {
-      return res.json();
+      "https://www.googleapis.com/youtube/v3/search?q=" + searchList + "&type=playlist&key=AIzaSyBZ7w-nQ2E4HdrYG6J9Y_GdJ-iwT31mLaA"
+
+
+    )
+
+    .then((response) => {
+
+      if (response.status >= 200 && response.status <= 299) {
+        return response.json();
+      } else {
+        alert(" the YT api failed with a respone of  " + response.status);
+      }
     })
+
     .then((data) => {
       var index1 = Math.floor(Math.random() * 5);
       var randomPlaylist = data.items[index1];
       var playlistId = randomPlaylist.id.playlistId;
+
       playlistData(playlistId);
       // Put the object into storage
       localStorage.setItem("playlist", JSON.stringify(data));
@@ -153,14 +160,13 @@ function playlistSearch(searchList) {
 
 function playlistData(playlistId) {
   fetch(
-    "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyDUp2REGCjhEYJVGi5TmJJwnQVkP9N0tuU" +
+      "https://www.googleapis.com/youtube/v3/playlists?key=AIzaSyBZ7w-nQ2E4HdrYG6J9Y_GdJ-iwT31mLaA" +
       "&id=" +
       playlistId +
-      "&part=player",
-    {
-      method: "GET",
-    }
-  )
+      "&part=player", {
+        method: "GET",
+      }
+    )
     .then((res) => {
       //  console.log(res);
       return res.json();
