@@ -6,14 +6,14 @@ font-family: 'Poppins', sans-serif; */
   background-color: #184e77;
 }
 header {
-  background-color: #184e77;
+  background-color: #1E6091;
   display: flex;
   justify-content: left;
   padding: 1rem;
 }
 h2 {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
+  font-weight: 400;
   color: white;
   text-align: center;
   font-size: 4rem;
@@ -95,7 +95,11 @@ a p {
   width: 100%;
   height: 20%;
   font-size: 1rem;
+<<<<<<< Updated upstream
   text-align: center;
+=======
+  color: #B5E48C;
+>>>>>>> Stashed changes
 }
 .project-tag p {
   color: #333;
@@ -104,8 +108,13 @@ a p {
   font-size: 2rem;
   font-family: "Lobster", cursive;
   position: absolute;
+<<<<<<< Updated upstream
+=======
+  margin-top: 5%;
+>>>>>>> Stashed changes
   font-style: italic;
   z-index: 1000;
+  text-shadow: 0 0 15px #555;
 }
 .top-right {
   position: absolute;
