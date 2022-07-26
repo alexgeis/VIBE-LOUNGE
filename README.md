@@ -15,6 +15,11 @@
  ---
  ## Links:
 
+[Deployed Live](https://alexgeis.github.io/VIBE-LOUNGE/)  
+
+[GitHub Repository](https://github.com/alexgeis/VIBE-LOUNGE)
+
+
  <br>
 
  ---
